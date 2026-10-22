@@ -1,0 +1,12 @@
+name: smoke-check
+on:
+  push:
+    branches: [main]
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: intentional drill failure
+        run: |
+          echo "release drill: intentional failure"
+          exit 1
